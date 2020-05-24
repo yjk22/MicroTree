@@ -14,7 +14,7 @@ public class DonorDBHelper extends SQLiteOpenHelper {
 
     public void onCreate(SQLiteDatabase db) {
         String sql;
-        sql = "CREATE TABLE donor (username TEXT, id INTEGER PRIMARY KEY)";
+        sql = "CREATE TABLE donor (username TEXT PRIMARY KEY, name TEXT, phone TEXT, password TEXT)";
         db.execSQL(sql);
     }
 
@@ -22,10 +22,10 @@ public class DonorDBHelper extends SQLiteOpenHelper {
 
     }
 
-    public void insert(String username, int id) {
+    public void insert(String username, String name, String phone, String password) {
         SQLiteDatabase db = getWritableDatabase();
         String sql;
-        sql = "INSERT INTO user VALUES(" + username + "," + id + ");";
+        sql = "INSERT INTO user VALUES('"+username+"','"+name+"','"+phone+"', '"+password+"');";
         db.execSQL(sql);
         db.close();
     }

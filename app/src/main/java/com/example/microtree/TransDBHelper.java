@@ -22,10 +22,10 @@ public class TransDBHelper extends SQLiteOpenHelper {
 
     }
 
-    public void insert(String username, int id) {
+    public void insert(int doneeid, int donorid) {
         SQLiteDatabase db = getWritableDatabase();
         String sql;
-        sql = "INSERT INTO user VALUES(" + username + "," + id + ");";
+        sql = "INSERT INTO trans VALUES(" + doneeid + "," + donorid + ");";
         db.execSQL(sql);
         db.close();
     }
