@@ -22,7 +22,7 @@ public class Register extends AppCompatActivity {
         setContentView(R.layout.register);
 
         Button insert = findViewById(R.id.button);
-        CheckBox donor = findViewById(R.id.checkBox);
+        final CheckBox donor = findViewById(R.id.checkBox);
         final TextInputEditText userName = findViewById(R.id.input5);
         final TextInputEditText Name = findViewById(R.id.input6);
         final TextInputEditText Phone = findViewById(R.id.input7);
@@ -36,7 +36,12 @@ public class Register extends AppCompatActivity {
                 String name = Name.getText().toString();
                 String phone = Phone.getText().toString();
                 String password = Password.getText().toString();
-                donorDB.insert(username, name, phone, password);
+                if (donor.isChecked()){
+                    donorDB.insert(username, name, phone, password);
+                }
+                else{
+                    doneeDB.insert(username, name, phone, password);
+                }
             }
         });
     }
