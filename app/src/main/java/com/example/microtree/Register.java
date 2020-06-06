@@ -42,6 +42,7 @@ public class Register extends AppCompatActivity {
                 else{
                     doneeDB.insert(username, name, phone, password);
                 }
+                finish();
             }
         });
     }
