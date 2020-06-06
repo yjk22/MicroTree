@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,8 +14,7 @@ import com.google.android.material.textfield.TextInputEditText;
 
 public class Login extends AppCompatActivity {
     SQLiteDatabase db;
-    DoneeDBHelper doneeDB = new DoneeDBHelper(this);
-    DonorDBHelper donorDB = new DonorDBHelper(this);
+    MyDBHelper myDB = new MyDBHelper(this);
 
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -28,7 +28,7 @@ public class Login extends AppCompatActivity {
         bt_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(doneeDB.search(user.getText().toString()) == true || donorDB.search(user.getText().toString()) == true) {
+                if(myDB.searchDonee(user.getText().toString()) || myDB.searchDonor(user.getText().toString()) ) {
                     Intent a = new Intent(Login.this, Homepage.class);
                     String temp;
                     temp = user.getText().toString();
@@ -37,6 +37,8 @@ public class Login extends AppCompatActivity {
                 }
             }
         });
+
+
         bt_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

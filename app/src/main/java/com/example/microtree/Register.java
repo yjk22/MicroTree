@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,8 +14,7 @@ import com.google.android.material.textfield.TextInputEditText;
 public class Register extends AppCompatActivity {
 
     SQLiteDatabase db;
-    DoneeDBHelper doneeDB = new DoneeDBHelper(this);
-    DonorDBHelper donorDB = new DonorDBHelper(this);
+    MyDBHelper myDB = new MyDBHelper(this);
 
 
     public void onCreate(Bundle savedInstanceState){
@@ -37,11 +37,14 @@ public class Register extends AppCompatActivity {
                 String phone = Phone.getText().toString();
                 String password = Password.getText().toString();
                 if (donor.isChecked()){
-                    donorDB.insert(username, name, phone, password);
+                   // Toast.makeText(getApplicationContext(),username,Toast.LENGTH_LONG).show();
+                    myDB.insertDonee(username, name, phone, password);
                 }
                 else{
-                    doneeDB.insert(username, name, phone, password);
+                    myDB.insertDonor(username, name, phone, password);
+                    //Toast.makeText(getApplicationContext(),username,Toast.LENGTH_LONG).show();
                 }
+                finish();
             }
         });
     }
