@@ -28,8 +28,16 @@ public class Login extends AppCompatActivity {
         bt_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(myDB.searchDonee(user.getText().toString()) || myDB.searchDonor(user.getText().toString()) ) {
+
+                if(myDB.searchDonee(user.getText().toString())) {
                     Intent a = new Intent(Login.this, Homepage.class);
+                    String temp;
+                    temp = user.getText().toString();
+                    a.putExtra("user",temp);
+                    startActivity(a);
+                }
+                else if(myDB.searchDonor(user.getText().toString())){
+                    Intent a = new Intent(Login.this, Homepage2.class);
                     String temp;
                     temp = user.getText().toString();
                     a.putExtra("user",temp);
