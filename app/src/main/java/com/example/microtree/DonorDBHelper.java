@@ -9,7 +9,7 @@ public class DonorDBHelper extends SQLiteOpenHelper {
     Context context;
 
     public DonorDBHelper(Context context) {
-        super(context, "my.db", null, 1);
+        super(context, "my1.db", null, 1);
         this.context = context;
     }
 
