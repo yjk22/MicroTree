@@ -38,10 +38,10 @@ public class Register extends AppCompatActivity {
                 String password = Password.getText().toString();
                 if (donor.isChecked()){
                    // Toast.makeText(getApplicationContext(),username,Toast.LENGTH_LONG).show();
-                    myDB.insertDonee(username, name, phone, password);
+                    myDB.insertDonor(username, name, phone, password);
                 }
                 else{
-                    myDB.insertDonor(username, name, phone, password);
+                    myDB.insertDonee(username, name, phone, password);
                     //Toast.makeText(getApplicationContext(),username,Toast.LENGTH_LONG).show();
                 }
                 finish();
