@@ -42,7 +42,6 @@ public class Register extends AppCompatActivity {
                 }
                 else{
                     myDB.insertDonee(username, name, phone, password);
-                    //Toast.makeText(getApplicationContext(),username,Toast.LENGTH_LONG).show();
                 }
                 finish();
             }

@@ -12,10 +12,10 @@ public class Homepage2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.homepage2);
 
-        ImageButton bt_userpage = findViewById(R.id.imageButton5);
-        ImageButton bt_profile = findViewById(R.id.imageButton6);
-        ImageButton bt_upload = findViewById(R.id.imageButton7);
-        ImageButton bt_off = findViewById(R.id.imageButton8);
+        ImageButton bt_userpage = findViewById(R.id.h2b1);
+        ImageButton bt_profile = findViewById(R.id.h2b2);
+        ImageButton bt_upload = findViewById(R.id.h2b3);
+        ImageButton bt_off = findViewById(R.id.h2b4);
 
         bt_userpage.setOnClickListener(new View.OnClickListener() {
             @Override

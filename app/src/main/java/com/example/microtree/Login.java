@@ -31,17 +31,22 @@ public class Login extends AppCompatActivity {
 
                 if(myDB.searchDonee(user.getText().toString(), pass.getText().toString())) {
                     Intent a = new Intent(Login.this, Homepage.class);
-                    String temp;
-                    temp = user.getText().toString();
-                    a.putExtra("user",temp);
+//                    String temp;
+//                    temp = user.getText().toString();
+//                    a.putExtra("user",temp);
                     startActivity(a);
+                    finish();
                 }
                 else if(myDB.searchDonor(user.getText().toString(), pass.getText().toString())){
                     Intent a = new Intent(Login.this, Homepage2.class);
-                    String temp;
-                    temp = user.getText().toString();
-                    a.putExtra("user",temp);
+//                    String temp;
+//                    temp = user.getText().toString();
+//                    a.putExtra("user",temp);
                     startActivity(a);
+                    finish();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"no username",Toast.LENGTH_LONG).show();
                 }
             }
         });

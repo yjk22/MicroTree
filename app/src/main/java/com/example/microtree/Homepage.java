@@ -13,10 +13,10 @@ public class Homepage extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.homepage);
-        ImageButton bt_userpage = findViewById(R.id.imageButton);
-        ImageButton bt_appeal = findViewById(R.id.imageButton2);
-        ImageButton bt_service = findViewById(R.id.imageButton3);
-        ImageButton bt_off = findViewById(R.id.imageButton4);
+        ImageButton bt_userpage = findViewById(R.id.hpbtn1);
+        ImageButton bt_appeal = findViewById(R.id.hpbtn2);
+        ImageButton bt_service = findViewById(R.id.hpbtn3);
+        ImageButton bt_off = findViewById(R.id.hpbtn4);
 
         bt_userpage.setOnClickListener(new View.OnClickListener() {
             @Override
