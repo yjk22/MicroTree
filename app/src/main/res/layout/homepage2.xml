@@ -31,20 +31,22 @@
             android:gravity="center">
 
             <ImageButton
-                android:id="@+id/imageButton5"
+                android:id="@+id/h2b1"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="6dp"
+                android:elevation="10dp"
                 android:scaleType="fitXY"
-                tools:src="@drawable/button1" />
+                android:src="@drawable/button1"/>
 
             <ImageButton
-                android:id="@+id/imageButton6"
+                android:id="@+id/h2b2"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="6dp"
+                android:elevation="10dp"
                 android:scaleType="fitXY"
-                tools:src="@drawable/button2" />
+                android:src="@drawable/button2" />
         </TableRow>
 
         <TableRow
@@ -53,21 +55,22 @@
             android:gravity="center">
 
             <ImageButton
-                android:id="@+id/imageButton7"
-                android:scaleType="fitXY"
+                android:id="@+id/h2b3"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="6dp"
                 android:elevation="10dp"
-                tools:src="@drawable/button3" />
+                android:scaleType="fitXY"
+                android:src="@drawable/button3"/>
+
             <ImageButton
-                android:id="@+id/imageButton8"
-                android:scaleType="fitXY"
+                android:id="@+id/h2b4"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="6dp"
                 android:elevation="10dp"
-                tools:src="@drawable/button4" />
+                android:scaleType="fitXY"
+                android:src="@drawable/button4"/>
 
         </TableRow>
     </TableLayout>

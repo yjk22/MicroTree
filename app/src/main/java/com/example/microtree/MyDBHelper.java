@@ -48,7 +48,7 @@ public class MyDBHelper extends SQLiteOpenHelper {
         boolean res = false;
         Cursor cursor = db.rawQuery("SELECT username FROM donee", null);
         while(cursor.moveToNext()){
-            if(username == cursor.getString(0)){
+            if(username.equals( cursor.getString(0))){
                 res = true;
             }
         }
@@ -60,7 +60,7 @@ public class MyDBHelper extends SQLiteOpenHelper {
         boolean res = false;
         Cursor cursor = db.rawQuery("SELECT username FROM donor", null);
         while(cursor.moveToNext()){
-            if(username.equals(cursor.getString(0))) {
+            if(username.equals( cursor.getString(0))) {
                 res = true;
             }
         }
