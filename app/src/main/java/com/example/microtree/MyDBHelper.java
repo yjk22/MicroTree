@@ -43,24 +43,24 @@ public class MyDBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    public boolean searchDonee(String username){
+    public boolean searchDonee(String username, String password){
         SQLiteDatabase db = getReadableDatabase();
         boolean res = false;
-        Cursor cursor = db.rawQuery("SELECT username FROM donee", null);
+        Cursor cursor = db.rawQuery("SELECT username, password FROM donee", null);
         while(cursor.moveToNext()){
-            if(username.equals( cursor.getString(0))){
+            if(username.equals(cursor.getString(0)) && password.equals(cursor.getString(1))){
                 res = true;
             }
         }
         return res;
     }
 
-    public boolean searchDonor(String username){
+    public boolean searchDonor(String username, String password){
         SQLiteDatabase db = getReadableDatabase();
         boolean res = false;
-        Cursor cursor = db.rawQuery("SELECT username FROM donor", null);
+        Cursor cursor = db.rawQuery("SELECT username, password FROM donor", null);
         while(cursor.moveToNext()){
-            if(username.equals( cursor.getString(0))) {
+            if(username.equals(cursor.getString(0)) && password.equals(cursor.getString(1))){
                 res = true;
             }
         }
