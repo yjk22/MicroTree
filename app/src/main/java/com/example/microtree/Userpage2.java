@@ -24,6 +24,6 @@ public class Userpage2 extends AppCompatActivity {
         tv27.setText(Integer.toString(myDB.totalmoney(usern)));
 
         TextView tv29 = findViewById(R.id.textView29);
-        tv29.setText(Integer.toString(myDB.paybackamount(usern)));
+        tv29.setText(Integer.toString(myDB.getmoney(usern)));
     }
 }
