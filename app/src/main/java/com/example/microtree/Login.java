@@ -31,9 +31,9 @@ public class Login extends AppCompatActivity {
 
                 if(myDB.searchDonee(user.getText().toString(), pass.getText().toString())) {
                     Intent a = new Intent(Login.this, Homepage.class);
-//                    String temp;
-//                    temp = user.getText().toString();
-//                    a.putExtra("user",temp);
+                    String usern;
+                    usern = user.getText().toString();
+                    a.putExtra("usern",usern);
                     startActivity(a);
                     finish();
                 }

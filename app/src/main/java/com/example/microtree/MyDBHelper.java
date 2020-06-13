@@ -79,6 +79,18 @@ public class MyDBHelper extends SQLiteOpenHelper {
         return mon;
     }
 
+    public int totalmoney (String username){
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT username, money FROM donor", null);
+        int mon = 0;
+        while(cursor.moveToNext()){
+            if(username.equals(cursor.getString(0))){
+                mon = cursor.getInt(1);
+            }
+        }
+        return mon;
+    }
+
     public int getmoney (String username){
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT username, moneyleft FROM donor", null);
