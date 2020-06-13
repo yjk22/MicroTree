@@ -17,10 +17,14 @@ public class Homepage2 extends AppCompatActivity {
         ImageButton bt_upload = findViewById(R.id.h2b3);
         ImageButton bt_off = findViewById(R.id.h2b4);
 
+        Intent it = getIntent();
+        final String usern = it.getStringExtra("usern");
+
         bt_userpage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent a = new Intent(Homepage2.this, Userpage2.class);
+                a.putExtra("usern",usern);
                 startActivity(a);
             }
         });
@@ -28,13 +32,6 @@ public class Homepage2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent a = new Intent(Homepage2.this, Profile.class);
-                startActivity(a);
-            }
-        });
-        bt_upload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent a = new Intent(Homepage2.this, Upload.class);
                 startActivity(a);
             }
         });

@@ -18,11 +18,16 @@ public class Homepage extends AppCompatActivity {
         ImageButton bt_service = findViewById(R.id.hpbtn3);
         ImageButton bt_off = findViewById(R.id.hpbtn4);
 
+        Intent it = getIntent();
+        final String usern = it.getStringExtra("usern");
+
         bt_userpage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent a = new Intent(Homepage.this, Userpage.class);
+                a.putExtra("usern",usern);
                 startActivity(a);
+
             }
         });
         bt_appeal.setOnClickListener(new View.OnClickListener() {

@@ -60,11 +60,6 @@
                 <action android:name = "android.intent.action.VIEW"/>
             </intent-filter>
         </activity>
-        <activity android:name=".Upload">
-            <intent-filter>
-                <action android:name = "android.intent.action.VIEW"/>
-            </intent-filter>
-        </activity>
         <activity android:name=".Profile">
             <intent-filter>
                 <action android:name = "android.intent.action.VIEW"/>
