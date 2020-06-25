@@ -17,9 +17,9 @@ public class MyDBHelper extends SQLiteOpenHelper {
 
     public void onCreate(SQLiteDatabase db) {
         String sql;
-        sql = "CREATE TABLE donee (username TEXT PRIMARY KEY, name TEXT, phone TEXT, password TEXT, money INTEGER, moneyleft INTEGER)";
+        sql = "CREATE TABLE donee (username TEXT PRIMARY KEY, name TEXT, phone TEXT, password TEXT, money INTEGER, moneyleft INTEGER, incomesource TEXT, reason TEXT, paybackdate TEXT, point INTEGER)";
         db.execSQL(sql);
-        sql = "CREATE TABLE donor (username TEXT PRIMARY KEY, name TEXT, phone TEXT, password TEXT, money INTEGER, moneyleft INTEGER)";
+        sql = "CREATE TABLE donor (username TEXT PRIMARY KEY, name TEXT, phone TEXT, password TEXT, money INTEGER, moneyleft INTEGER, point INTEGER)";
         db.execSQL(sql);
     }
 
@@ -27,10 +27,66 @@ public class MyDBHelper extends SQLiteOpenHelper {
 
     }
 
+    public void updatefullname(String n, String user){
+        SQLiteDatabase db = getWritableDatabase();
+        String sql;
+        sql = "UPDATE donee SET name = '"+n+"' WHERE username = '"+user+"'";
+        db.execSQL(sql);
+        db.close();
+    }
+
+    public String displayfullname(String username){
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT username, name FROM donee", null);
+        String n = "";
+        while(cursor.moveToNext()){
+            if(username.equals(cursor.getString(0))){
+                n = cursor.getString(1);
+            }
+        }
+        return n;
+    }
+
+    public String displaysource(String username){
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT username, incomesource FROM donee", null);
+        String n = "";
+        while(cursor.moveToNext()){
+            if(username.equals(cursor.getString(0))){
+                n = cursor.getString(1);
+            }
+        }
+        return n;
+    }
+
+    public String displayreason(String username){
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT username, reason FROM donee", null);
+        String n = "";
+        while(cursor.moveToNext()){
+            if(username.equals(cursor.getString(0))){
+                n = cursor.getString(1);
+            }
+        }
+        return n;
+    }
+
+    public String displaydate(String username){
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT username, paybackdate FROM donee", null);
+        String n = "";
+        while(cursor.moveToNext()){
+            if(username.equals(cursor.getString(0))){
+                n = cursor.getString(1);
+            }
+        }
+        return n;
+    }
+
     public void insertDonee(String username, String name, String phone, String password) {
         SQLiteDatabase db = getWritableDatabase();
         String sql;
-        sql = "INSERT INTO donee VALUES('"+username+"','"+name+"','"+phone+"', '"+password+"', 0, 0);";
+        sql = "INSERT INTO donee VALUES('"+username+"','"+name+"','"+phone+"', '"+password+"', 0, 0, 'none', 'none','none', 0);";
         db.execSQL(sql);
         db.close();
     }
@@ -38,7 +94,7 @@ public class MyDBHelper extends SQLiteOpenHelper {
     public void insertDonor(String username, String name, String phone, String password) {
         SQLiteDatabase db = getWritableDatabase();
         String sql;
-        sql = "INSERT INTO donor VALUES('"+username+"','"+name+"','"+phone+"', '"+password+"', 0, 0);";
+        sql = "INSERT INTO donor VALUES('"+username+"','"+name+"','"+phone+"', '"+password+"', 0, 0, 0);";
         db.execSQL(sql);
         db.close();
     }
