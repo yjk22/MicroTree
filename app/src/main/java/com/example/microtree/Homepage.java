@@ -34,6 +34,7 @@ public class Homepage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent a = new Intent(Homepage.this, Loanappeal2.class);
+                a.putExtra("usern",usern);
                 startActivity(a);
             }
         });

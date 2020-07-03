@@ -1,4 +1,6 @@
 package com.example.microtree;
 
-public class Profile2 {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class Profile2 extends AppCompatActivity {
 }

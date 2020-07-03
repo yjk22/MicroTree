@@ -18,7 +18,7 @@ public class Loanappeal2 extends AppCompatActivity {
         Button bt_edit = findViewById(R.id.button3);
 
         Intent it = getIntent();
-        String name = it.getStringExtra("usern");
+        final String name = it.getStringExtra("usern");
 
         TextView tv13 = findViewById(R.id.textView13);
         tv13.setText((myDB.displayfullname(name)));
@@ -40,6 +40,7 @@ public class Loanappeal2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent a = new Intent(Loanappeal2.this, Loanappeal.class);
+                a.putExtra("usern", name);
                 startActivity(a);
             }
         });
