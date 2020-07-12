@@ -34,6 +34,7 @@ public class Login extends AppCompatActivity {
                     String usern;
                     usern = user.getText().toString();
                     a.putExtra("usern",usern);
+
                     startActivity(a);
                     finish();
                 }

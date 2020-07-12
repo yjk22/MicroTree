@@ -35,6 +35,38 @@ public class MyDBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void updatesource(String n, String user){
+        SQLiteDatabase db = getWritableDatabase();
+        String sql;
+        sql = "UPDATE donee SET incomesource = '"+n+"' WHERE username = '"+user+"'";
+        db.execSQL(sql);
+        db.close();
+    }
+
+    public void updatereason(String n, String user){
+        SQLiteDatabase db = getWritableDatabase();
+        String sql;
+        sql = "UPDATE donee SET reason = '"+n+"' WHERE username = '"+user+"'";
+        db.execSQL(sql);
+        db.close();
+    }
+
+    public void updatedate(String n, String user){
+        SQLiteDatabase db = getWritableDatabase();
+        String sql;
+        sql = "UPDATE donee SET paybackdate = '"+n+"' WHERE username = '"+user+"'";
+        db.execSQL(sql);
+        db.close();
+    }
+
+    public void updateamount(String n, String user){
+        SQLiteDatabase db = getWritableDatabase();
+        String sql;
+        sql = "UPDATE donee SET money = '"+n+"' WHERE username = '"+user+"'";
+        db.execSQL(sql);
+        db.close();
+    }
+
     public String displayfullname(String username){
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT username, name FROM donee", null);
